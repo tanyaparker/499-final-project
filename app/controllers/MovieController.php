@@ -11,26 +11,30 @@ class MovieController extends BaseController {
 
 	public function results()
 	{
-		$search = Input::get('search');
 		$search = "lists/movies/box_office.json?limit=20&country=us&apikey=2hgx4ggggqwsuc94vfwfe783";
 
-		$movies = new RottenTomatoesSearch();
-		$result = $movies->getResults($search);
+		$result = Cache::get('movies-all');
 
-		if($result) {
+		if(!$result) {
+			$movies = new RottenTomatoesSearch();
+			$result = $movies->getResults($search);
+
+			Cache::put('movies-all', $result, 20);
 
 			return View::make('movies/results', [
 				'result' => $result
 			]);
 
 		}
-		else {
-			return Redirect::to('movies/search')	
-				->withInput()
-				->with('errors', 'Sorry, ' . $search . ' does not exist.');
+		else { 
+			return View::make('movies/results', [
+				'result' => $result
+			]);
 		}
 	}
 
 }
 
+
 ?>
+
