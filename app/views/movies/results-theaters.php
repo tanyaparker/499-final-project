@@ -8,9 +8,15 @@
 
 <body>
 
-	<h1><?php ?></h1>
+	<h1>20 Movies Currently in Theaters</h1>
 
 	<table>
+	<tr>
+		<td><b>Title</b></td>
+		<td><b>Rating</b></td>
+		<td><b>Critic Score</b></td>
+		<td><b>Audience Score</b></td>
+	</tr>
 	<?php 
 		foreach($result->movies as $m) {
 			echo "<tr>";

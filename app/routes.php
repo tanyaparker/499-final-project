@@ -34,4 +34,6 @@ Route::get('/facebook', 'FacebookController@results');
 
 Route::get('/movies/search', 'MovieController@search');
 
-Route::get('/movies', 'MovieController@results');
+Route::get('/movies/box-office', 'MovieController@boxOffice');
+
+Route::get('/movies/in-theaters', 'MovieController@inTheaters');

@@ -13,18 +13,12 @@
 
 <body>
 
-<form method="get" action="/movies">
-	<h1><font face="Helvetica">Movies Search</font></h1>
-	<table>
-	<tr>
-<!-- 		<td><font face="Helvetica"><b>Search: </b></font></td>
-		<td><input type="text" name="search" /></td> -->
-	</tr>
-	<tr>
-		<td></td>
-		<td><input type="submit"  value="Search" /></td>
-	</tr>
-</form>
+<h1><font face="Helvetica">Movies</font></h1>
+
+<a href="/movies/box-office">Top 20 Grossing Movies</a>
+<p>
+<a href="/movies/in-theaters">Movies Currently in Theaters</a>
+
 
 
 </body>
