@@ -31,3 +31,7 @@ Route::post('/dvds', 'DvdController@insert');
 Route::get('/facebook/search', 'FacebookController@search');
 
 Route::get('/facebook', 'FacebookController@results');
+
+Route::get('/movies/search', 'MovieController@search');
+
+Route::get('/movies', 'MovieController@results');
