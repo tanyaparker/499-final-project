@@ -20,6 +20,8 @@ Route::get('/songs/search', 'SongController@search');
 
 Route::get('/songs', 'SongController@listSongs');
 
+
+
 Route::get('/dvds/search', 'DvdController@search');
 
 Route::get('/dvds', 'DvdController@listDvds');
@@ -28,9 +30,18 @@ Route::get('/dvds/create', 'DvdController@create');
 
 Route::post('/dvds', 'DvdController@insert');
 
+
+
+
 Route::get('/facebook/search', 'FacebookController@search');
 
 Route::get('/facebook', 'FacebookController@results');
+
+Route::get('/facebook/login', function() {
+	return View::make('facebook/login');
+});
+
+
 
 Route::get('/movies/search', 'MovieController@search');
 
