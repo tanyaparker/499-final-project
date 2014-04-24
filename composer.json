@@ -9,7 +9,8 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"Yelp": "./app/"
+			"Yelp": "./app/",
+			"ITP": "./app"
 		},
 		"classmap": [
 			"app/commands",
