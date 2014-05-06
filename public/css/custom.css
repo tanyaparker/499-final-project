@@ -1,0 +1,27 @@
+<style>
+
+body {
+    position: fixed;
+}
+
+.full_bg {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 450px 0;
+    text-align: center;
+    color: #fff;
+    background: url(../img/maleficent_bg.jpg) no-repeat center center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.main_right {
+    text-align: right;
+    padding: 0 200px 0 0;
+}
+
+</style>

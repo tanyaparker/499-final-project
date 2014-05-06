@@ -48,3 +48,29 @@ Route::get('/movies/search', 'MovieController@search');
 Route::get('/movies/box-office', 'MovieController@boxOffice');
 
 Route::get('/movies/in-theaters', 'MovieController@inTheaters');
+
+
+
+Route::get('/quickflix', function() {
+	return View::make('/quickflix/index');
+});
+
+Route::get('/quickflix/all', function() {
+	return View::make('/quickflix/all');
+});
+
+Route::get('/quickflix/bucket', function() {
+	return View::make('/quickflix/bucket');
+});
+
+
+
+
+
+
+
+
+
+
+
+
