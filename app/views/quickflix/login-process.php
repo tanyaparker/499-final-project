@@ -21,6 +21,7 @@ $loggedIn = $session->get('email');
 
 if ($login) { //if logging in for first time
 	$session->set('email', $auth->getEmail());
+	$session->set('id', $auth->getId());
 	$session->set('loginTime', time());
 	
 	$response = new RedirectResponse('/quickflix/bucket');

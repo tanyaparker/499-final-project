@@ -1,5 +1,8 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Session\Session;
 use \ITP\RottenTomatoesAPI\RottenTomatoesSearch;
 
 class MovieController extends BaseController {
@@ -16,7 +19,12 @@ class MovieController extends BaseController {
 
 	public function loginProcess()
 	{
-		return View::make('quickflix/login-process');
+		$validation = Movie::validateLogin(Input::all());
+
+		if (!$validation->fails()) 
+			return View::make('quickflix/login-process');
+		else
+			return View::make('quickflix/login');
 	}
 
 	public function logout()
@@ -29,9 +37,53 @@ class MovieController extends BaseController {
 		return View::make('quickflix/register');
 	}
 
+	public function registerProcess()
+	{
+		$validation = Movie::validateRegistration(Input::all());
+
+		if (!$validation->fails()) {
+			$user = new User();
+			$user->first = Input::get('first');
+			$user->last = Input::get('last');
+			$user->email = Input::get('email');
+			$user->password = Input::get('password');
+			$user->save();
+
+			return View::make('quickflix/register-process');
+		}
+		else
+			return View::make('quickflix/register');
+	}
+
 	public function favorites()
 	{
-		return View::make('quickflix/bucket');
+		$result = Movie::getFavorites();
+
+		return View::make('quickflix/bucket', [
+			'result' => $result
+		]);
+	}
+
+	public function favorited()
+	{
+		$session = new Session();
+		$session->start();
+		$id = $session->get('id');
+
+		$title = Input::get('title');
+		$rating = Input::get('rating');
+		$critics_score = Input::get('critics_score');
+		$audience_score = Input::get('audience_score');
+		$img_url = Input::get('img_url');
+		$synopsis = Input::get('synopsis');
+
+		Movie::addFavorite($title, $rating, $critics_score, $audience_score, $img_url, $synopsis, $id);
+
+		$result = Movie::getFavorites();
+
+		return View::make('quickflix/bucket', [
+			'result' => $result
+		]);
 	}
 
 	public function search()

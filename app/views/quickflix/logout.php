@@ -67,11 +67,20 @@ $session->clear();
     </nav>
 
     <!-- Page content goes here -->
-    <p>Space
-    	<p>Space
-    		
-
-    <p><center><h1>You have been logged out.</h1></center>
+    <div class="container" style="padding: 200px 0 0 0">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+        <div class="well">
+            <p><center><h1>You have been logged out.</h1>
+            <p><a href="login" class="btn btn-info btn-lg" role="button">Log Back In</a></center>
+        </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    </div>
 
 
     <!-- JavaScript -->

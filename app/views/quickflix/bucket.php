@@ -73,6 +73,57 @@ if (empty($email)) {
 
     <!-- Page content goes here -->
 
+    <div class="container">
+    <?php 
+        $i = 1;
+        foreach($result as $m) {
+            if($i%4 == 0)
+                echo "<div class='row'>";
+            ?>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <div class="well">
+                    <center><img src="<?php echo $m->img_url ?>"></center>
+                    <p><h3> <?php echo $m->title ?> </h3>
+                    <b>Rating:</b> <?php echo $m->rating ?>
+
+                        <?php
+                        $critics_score = $m->critics_score;
+                        if($critics_score == -1)
+                            $critics_score == "N/A";
+                        else
+                            $critics_score = $critics_score . "%";
+
+                        $aud_score = $m->audience_score;
+                        if($aud_score == -1)
+                            $aud_score == "N/A";
+                        else
+                            $aud_score = $aud_score . "%";
+                        ?>
+
+                    <br><b>Critics:</b> <?php echo $critics_score ?>
+                    <br><b>Audience:</b> <?php echo $aud_score ?>
+
+                    <?php 
+                        $synopsis = $m->synopsis;
+                        $synopsis = (strlen($synopsis) > 200) ? substr($synopsis, 0, 200) . '...' : $synopsis; 
+                    ?>
+
+                    <br><?php echo $synopsis ?>
+
+                    <center><button class="btn btn-info" style="width:200px">More Info <i class="glyphicon glyphicon-chevron-right"></i></button></center>
+                    <p><center><a href="/favorited" class="btn btn-danger" style="width:200px" role="button">Remove From Favorites <i class="glyphicon glyphicon-minus"></i></a></center>
+
+                </div>
+                </div>
+    
+            <?php
+            if($i%4 == 0)
+                echo "</div>";
+
+            $i = $i + 1;
+        }
+    ?>
+    </div>
 
     <!-- JavaScript -->
     <script src="../js/jquery-1.10.2.js"></script>

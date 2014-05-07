@@ -7,6 +7,7 @@ class Auth {
 	protected $pdo;
 	protected $email;
 	protected $password;
+	protected $id;
 
 	public function __construct($pdo) {
 		$this->pdo = $pdo;
@@ -30,6 +31,7 @@ class Auth {
     	if($num == 1) {
     		$this->email = $results[0]['email'];
     		$this->password = $results[0]['password'];
+    		$this->id = $results[0]['id'];
     		return true;
     	}
     	else {
@@ -39,6 +41,10 @@ class Auth {
 
 	public function getEmail() {
 		return $this->email;
+	}
+
+	public function getId() {
+		return $this->id;
 	}
 }
 

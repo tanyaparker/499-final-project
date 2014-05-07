@@ -67,14 +67,14 @@
             <form role="form">
                 <div class="row">
                     <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="First Name" required>
+                        <input type="text" name="first" class="form-control" placeholder="First Name" required>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Last Name" required>
+                        <input type="text" name="last" class="form-control" placeholder="Last Name" required>
                     </div>
                 </div>
-            <br><input type="email" class="form-control" placeholder="Email Address" required>
-            <br><input type="password" class="form-control" placeholder="Password" required>
+            <br><input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            <br><input type="password" name="password" class="form-control" placeholder="Password" required>
             <br><button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
             </form>
             <br><h4>Already have an account?</h4>

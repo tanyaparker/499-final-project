@@ -97,7 +97,16 @@
 
                     <br><?php echo $synopsis ?>
                     <center><button class="btn btn-info" style="width:200px">More Info <i class="glyphicon glyphicon-chevron-right"></i></button></center>
-                    <p><center><button class="btn btn-success" style="width:200px">Add to Favorites <i class="glyphicon glyphicon-plus"></i></button></center>
+
+                    <form role="form" action="/quickflix/favorited">
+                    <input type="hidden" name="title" value="<?php echo $m->title ?> ">
+                    <input type="hidden" name="rating" value="<?php echo $m->mpaa_rating ?> ">
+                    <input type="hidden" name="critics_score" value="<?php echo $critics_score ?> ">
+                    <input type="hidden" name="audience_score" value="<?php echo $aud_score ?> ">
+                    <input type="hidden" name="img_url" value="<?php echo $m->posters->detailed ?> ">
+                    <input type="hidden" name="synopsis" value="<?php echo $m->synopsis ?> ">
+                    <p><center><button class="btn btn-success" style="width:200px" type="submit">Add to Favorites <i class="glyphicon glyphicon-plus"></i></a></center>
+                    </form>
                 </div>
                 </div>
     

@@ -57,6 +57,8 @@ Route::get('/quickflix/theaters', 'MovieController@inTheaters');
 
 Route::get('/quickflix/soon', 'MovieController@comingSoon');
 
+Route::get('/quickflix/favorited', 'MovieController@favorited');
+
 Route::get('/quickflix/bucket', 'MovieController@favorites');
 
 Route::get('/quickflix/search', 'MovieController@search');
@@ -66,6 +68,8 @@ Route::get('/quickflix/login', 'MovieController@login');
 Route::post('/quickflix/login-process', 'MovieController@loginProcess');
 
 Route::get('/quickflix/register', 'MovieController@register');
+
+Route::get('/quickflix/register-process', 'MovieController@registerProcess');
 
 Route::get('/quickflix/logout', 'MovieController@logout');
 
