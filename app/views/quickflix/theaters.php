@@ -6,11 +6,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Quick Flix</title>
+    <title>Quick Flix - Now Playing</title>
 
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/full.css" rel="stylesheet">
-    <link href="../css/custom.css" rel="stylesheet">
 </head>
 
 <body>
@@ -55,13 +54,57 @@
 
     <!-- Page content goes here -->
 
-    <div class="full_bg">
-      <div class="main_right">
-        <h1>QUICK FLIX!</h1>
-        <p>All your movies. All in one place.
-        <p><a class="btn btn-primary" role="button">Sign In</a>
-        <a class="btn btn-info" role="button">Register</a></p>
-      </div>
+    <p>Space
+        <p>Space
+
+    <div class="container">
+    <?php 
+        $i = 1;
+        foreach($result->movies as $m) {
+            if($i%4 == 0)
+                echo "<div class='row'>";
+            ?>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <div class="well">
+                    <center><img src="<?php echo $m->posters->detailed ?>"></center>
+                    <p><h3> <?php echo $m->title ?> </h3>
+                    <b>Rating:</b> <?php echo $m->mpaa_rating ?>
+
+                        <?php
+                        $critics_score = $m->ratings->critics_score;
+                        if($critics_score == -1)
+                            $critics_score == "N/A";
+                        else
+                            $critics_score = $critics_score . "%";
+
+                        $aud_score = $m->ratings->audience_score;
+                        if($aud_score == -1)
+                            $aud_score == "N/A";
+                        else
+                            $aud_score = $aud_score . "%";
+                        ?>
+
+                    <br><b>Critics:</b> <?php echo $critics_score ?>
+                    <br><b>Audience:</b> <?php echo $aud_score ?>
+
+                        <?php 
+                            $synopsis = $m->synopsis;
+                            $synopsis = (strlen($synopsis) > 200) ? substr($synopsis, 0, 200) . '...' : $synopsis; 
+                        ?>
+
+                    <br><?php echo $synopsis ?>
+                    <center><button class="btn btn-info" style="width:200px">More Info <i class="glyphicon glyphicon-chevron-right"></i></button></center>
+                    <p><center><button class="btn btn-success" style="width:200px">Add to Favorites <i class="glyphicon glyphicon-plus"></i></button></center>
+                </div>
+                </div>
+    
+            <?php
+            if($i%4 == 0)
+                echo "</div>";
+
+            $i = $i + 1;
+        }
+    ?>
     </div>
 
 

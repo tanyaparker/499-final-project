@@ -51,17 +51,14 @@ Route::get('/movies/in-theaters', 'MovieController@inTheaters');
 
 
 
-Route::get('/quickflix', function() {
-	return View::make('/quickflix/index');
-});
+Route::get('/quickflix', 'MovieController@home');
 
-Route::get('/quickflix/all', function() {
-	return View::make('/quickflix/all');
-});
+Route::get('/quickflix/theaters', 'MovieController@inTheaters');
 
-Route::get('/quickflix/bucket', function() {
-	return View::make('/quickflix/bucket');
-});
+Route::get('/quickflix/soon', 'MovieController@comingSoon');
+
+Route::get('/quickflix/search', 'MovieController@search');
+
 
 
 
