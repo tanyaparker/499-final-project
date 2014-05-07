@@ -90,6 +90,26 @@ class MovieController extends BaseController {
 		]);
 	}
 
+	public function removeFavorite()
+	{
+		$session = new Session();
+		$id = $session->get('id');
+
+		$title = Input::get('title');
+		$critics_score = Input::get('critics_score');
+		$audience_score = Input::get('audience_score');
+		$img_url = Input::get('img_url');
+		$synopsis = Input::get('synopsis');
+
+		Movie::removeFavorite($title, $critics_score, $audience_score, $img_url, $synopsis, $id);
+
+		$result = Movie::getFavorites($id);
+
+		return View::make('quickflix/bucket', [
+			'result' => $result
+		]);	
+	}
+
 	public function search()
 	{
 		$title = Input::get('title');

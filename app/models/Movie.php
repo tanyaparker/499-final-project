@@ -53,5 +53,17 @@ class Movie extends Eloquent {
 			);
     }
 
+    public static function removeFavorite($title, $critics_score, $audience_score, $img_url, $synopsis, $id) {
+
+    	$query = DB::table('favorites')
+    		->where('user_id', '=', $id)
+    		->where('title', '=', $title)
+    		->where('critics_score', '=', $critics_score)
+    		->where('audience_score', '=', $audience_score)
+    		->where('img_url', '=', $img_url)
+    		->where('synopsis', '=', $synopsis)
+    		->delete();
+    }
+
 
 }

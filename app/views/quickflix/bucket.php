@@ -114,8 +114,15 @@ if (empty($email)) {
                     <br><?php echo $synopsis ?>
 
                     <center><button class="btn btn-info" style="width:200px">More Info <i class="glyphicon glyphicon-chevron-right"></i></button></center>
-                    <p><center><a href="/favorited" class="btn btn-danger" style="width:200px" role="button">Remove From Favorites <i class="glyphicon glyphicon-minus"></i></a></center>
 
+                    <form role="form" action="/quickflix/remove">
+                    <input type="hidden" name="title" value="<?php echo $m->title ?> ">
+                    <input type="hidden" name="critics_score" value="<?php echo $critics_score ?> ">
+                    <input type="hidden" name="audience_score" value="<?php echo $aud_score ?> ">
+                    <input type="hidden" name="img_url" value="<?php echo $m->img_url ?> ">
+                    <input type="hidden" name="synopsis" value="<?php echo $m->synopsis ?> ">
+                    <p><center><button class="btn btn-danger" style="width:200px" type="submit">Remove From Favorites <i class="glyphicon glyphicon-minus"></i></a></center>
+                    </form>
                 </div>
                 </div>
     

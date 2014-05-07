@@ -59,6 +59,8 @@ Route::get('/quickflix/soon', 'MovieController@comingSoon');
 
 Route::get('/quickflix/favorited', 'MovieController@favorited');
 
+Route::get('/quickflix/remove', 'MovieController@removeFavorite');
+
 Route::get('/quickflix/bucket', 'MovieController@favorites');
 
 Route::get('/quickflix/search', 'MovieController@search');
