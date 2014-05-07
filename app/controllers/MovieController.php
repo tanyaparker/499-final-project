@@ -9,6 +9,20 @@ class MovieController extends BaseController {
 		return View::make('quickflix/index');
 	}
 
+	public function search()
+	{
+		$title = Input::get('title');
+		$search = "movies.json?q=" . $title . "&page_limit=20&page=1&apikey=2hgx4ggggqwsuc94vfwfe783";
+
+		$movies = new RottenTomatoesSearch();
+		$result = $movies->getResults($search);
+
+		return View::make('quickflix/search-results', [
+			'result' => $result
+		]);
+
+	}
+
 	public function boxOffice()
 	{
 		$search = "lists/movies/box_office.json?limit=20&country=us&apikey=2hgx4ggggqwsuc94vfwfe783";

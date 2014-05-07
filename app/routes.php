@@ -57,6 +57,8 @@ Route::get('/quickflix/theaters', 'MovieController@inTheaters');
 
 Route::get('/quickflix/soon', 'MovieController@comingSoon');
 
+Route::get('/quickflix/bucket', 'MovieController@bucket');
+
 Route::get('/quickflix/search', 'MovieController@search');
 
 
