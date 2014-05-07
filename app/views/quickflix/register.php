@@ -77,6 +77,8 @@
             <br><input type="password" class="form-control" placeholder="Password" required>
             <br><button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
             </form>
+            <br><h4>Already have an account?</h4>
+            <p><a href="login" class="btn btn-lg btn-info btn-block" role="button">Log In</a>
         </div>
         </div>
         <div class="col-md-3">

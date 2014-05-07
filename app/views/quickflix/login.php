@@ -77,6 +77,8 @@ $session->start();
             <br><input type="password" name="password" class="form-control" placeholder="Password" required>
             <br><button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
             </form>
+            <br><h4>Don't have an account yet?</h4>
+            <p><a href="register" class="btn btn-lg btn-info btn-block" role="button">Register</a>
         </div>
         </div>
         <div class="col-md-3">
