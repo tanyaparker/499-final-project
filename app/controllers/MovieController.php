@@ -9,6 +9,21 @@ class MovieController extends BaseController {
 		return View::make('quickflix/index');
 	}
 
+	public function login()
+	{
+		return View::make('quickflix/login');
+	}
+
+	public function logout()
+	{
+		return View::make('quickflix/logout');
+	}
+
+	public function register()
+	{
+		return View::make('quickflix/register');
+	}
+
 	public function favorites()
 	{
 		return View::make('quickflix/bucket');

@@ -36,6 +36,9 @@
                     <li><a href="/quickflix/bucket">My Bucket List</a>
                     </li>
                 </ul>
+                <div class="nav navbar-right" style="padding: 8px 0 0 0">
+                    <a href="logout" class="btn btn-danger" role="button">Log Out</a>
+                </div>
                 <div class="col-sm-3 col-md-3 pull-right">
                 <form class="navbar-form" role="search" action="/quickflix/search">
                     <div class="input-group">

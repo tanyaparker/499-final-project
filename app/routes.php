@@ -61,6 +61,11 @@ Route::get('/quickflix/bucket', 'MovieController@favorites');
 
 Route::get('/quickflix/search', 'MovieController@search');
 
+Route::get('/quickflix/login', 'MovieController@login');
+
+Route::get('/quickflix/register', 'MovieController@register');
+
+Route::get('/quickflix/logout', 'MovieController@logout');
 
 
 

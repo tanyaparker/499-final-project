@@ -37,6 +37,9 @@
                     <li><a href="/quickflix/bucket">My Bucket List</a>
                     </li>
                 </ul>
+                <div class="nav navbar-right" style="padding: 8px 0 0 0">
+                    <a href="quickflix/logout" class="btn btn-danger" role="button">Log Out</a>
+                </div>
                 <div class="col-sm-3 col-md-3 pull-right">
                 <form class="navbar-form" role="search" action="/quickflix/search">
                     <div class="input-group">
@@ -59,8 +62,8 @@
       <div class="main_right">
         <h1>QUICK FLIX!</h1>
         <p>All your movies. All in one place.
-        <p><a class="btn btn-primary" role="button">Sign In</a>
-        <a class="btn btn-info" role="button">Register</a></p>
+        <p><a href="quickflix/login" class="btn btn-primary" role="button">Log In</a>
+        <a href="quickflix/register" class="btn btn-info" role="button">Register</a></p>
       </div>
     </div>
 

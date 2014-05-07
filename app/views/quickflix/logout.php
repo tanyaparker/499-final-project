@@ -1,24 +1,3 @@
-<?php 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Session\Session;
-
-$session = new Session();
-$session->start();
-$username = $session->get('username');
-
-if (empty($username)) {
-    $session->getFlashBag()->add('error', 'Please log in to see your favorites!');
-
-    $response = new RedirectResponse('/quickflix/login');
-    $response->send();
-}
-else {
-    $session->getFlashBag()->add('success', 'You have successfully logged in!');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +6,7 @@ else {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Quick Flix - My Favorites</title>
+    <title>Quick Flix - Log Out</title>
 
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/full.css" rel="stylesheet">
@@ -79,7 +58,9 @@ else {
     <!-- Page content goes here -->
     <p>Space
     	<p>Space
-    		<p>Bucket
+    		
+
+    <p><center><h1>You have been logged out.</h1></center>
 
 
     <!-- JavaScript -->
