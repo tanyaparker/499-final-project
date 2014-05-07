@@ -1,3 +1,14 @@
+<?php
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Session\Session;
+
+$session = new Session();
+$session->start();
+$session->clear();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

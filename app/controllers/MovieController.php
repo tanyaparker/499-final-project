@@ -14,6 +14,11 @@ class MovieController extends BaseController {
 		return View::make('quickflix/login');
 	}
 
+	public function loginProcess()
+	{
+		return View::make('quickflix/login-process');
+	}
+
 	public function logout()
 	{
 		return View::make('quickflix/logout');

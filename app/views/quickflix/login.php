@@ -1,3 +1,11 @@
+<?php
+use Symfony\Component\HttpFoundation\Session\Session;
+
+$session = new Session();
+$session->start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,20 +64,17 @@
     </nav>
 
     <!-- Page content goes here -->
-    <p>Space
-    	<p>Space
-    		
 
-    <div class="container">
+    <div class="container" style="padding: 200px 0 0 0">
     <div class="row">
         <div class="col-md-3">
         </div>
         <div class="col-md-6">
         <div class="well">
             <h1>Log In</h1>
-            <form role="form">
-            <input type="email" class="form-control" placeholder="Email Address" required>
-            <br><input type="password" class="form-control" placeholder="Password" required>
+            <form role="form" method="post" action="/quickflix/login-process">
+            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            <br><input type="password" name="password" class="form-control" placeholder="Password" required>
             <br><button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
             </form>
         </div>

@@ -56,11 +56,8 @@
     </nav>
 
     <!-- Page content goes here -->
-    <p>Space
-    	<p>Space
-    		
 
-    <div class="container">
+    <div class="container" style="padding: 200px 0 0 0">
     <div class="row">
         <div class="col-md-3">
         </div>

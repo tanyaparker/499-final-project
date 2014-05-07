@@ -63,6 +63,8 @@ Route::get('/quickflix/search', 'MovieController@search');
 
 Route::get('/quickflix/login', 'MovieController@login');
 
+Route::post('/quickflix/login-process', 'MovieController@loginProcess');
+
 Route::get('/quickflix/register', 'MovieController@register');
 
 Route::get('/quickflix/logout', 'MovieController@logout');

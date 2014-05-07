@@ -5,16 +5,11 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 $session = new Session();
 $session->start();
-$username = $session->get('username');
+$email = $session->get('email');
 
-if (empty($username)) {
-    $session->getFlashBag()->add('error', 'Please log in to see your favorites!');
-
+if (empty($email)) {
     $response = new RedirectResponse('/quickflix/login');
     $response->send();
-}
-else {
-    $session->getFlashBag()->add('success', 'You have successfully logged in!');
 }
 
 ?>
@@ -77,9 +72,6 @@ else {
     </nav>
 
     <!-- Page content goes here -->
-    <p>Space
-    	<p>Space
-    		<p>Bucket
 
 
     <!-- JavaScript -->
