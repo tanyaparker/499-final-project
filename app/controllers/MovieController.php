@@ -57,7 +57,12 @@ class MovieController extends BaseController {
 
 	public function favorites()
 	{
-		$result = Movie::getFavorites();
+		// $session = new Session();
+		// $id = $session->get('id');
+		// $id = Session::get('user_id');
+		// var_dump($id);
+		$id = 2;
+		$result = Movie::getFavorites($id);
 
 		return View::make('quickflix/bucket', [
 			'result' => $result
@@ -67,7 +72,6 @@ class MovieController extends BaseController {
 	public function favorited()
 	{
 		$session = new Session();
-		$session->start();
 		$id = $session->get('id');
 
 		$title = Input::get('title');
@@ -79,7 +83,7 @@ class MovieController extends BaseController {
 
 		Movie::addFavorite($title, $rating, $critics_score, $audience_score, $img_url, $synopsis, $id);
 
-		$result = Movie::getFavorites();
+		$result = Movie::getFavorites($id);
 
 		return View::make('quickflix/bucket', [
 			'result' => $result

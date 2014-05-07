@@ -6,7 +6,7 @@ class Movie extends Eloquent {
     {
         return Validator::make($input, [
           'email'	=> 'required|email',
-          'password'	=> 'required|min:8'
+          'password'	=> 'required|min:7'
         ]);
     }
 
@@ -16,14 +16,14 @@ class Movie extends Eloquent {
           'first'	=> 'required|alpha_num',
           'last' 	=> 'required|alpha_num',
           'email'	=> 'required|email',
-          'password'	=> 'required|min:8'
+          'password'	=> 'required|min:7'
         ]);
     }
 
-    public static function getFavorites() {
+    public static function getFavorites($id) {
     	$query = DB::table('favorites')
     		->take(20)
-    		->where('user_id', '=', '1')
+    		->where('user_id', '=', $id)
     		->join('ratings', function($join) {
 				$join->on('favorites.rating_id', '=', 'ratings.id');
 				});
