@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Quick Flix</title>
+    <title>Quick Flix - My Favorites</title>
 
     <link href="../css/bootstrap.css" rel="stylesheet">
     <link href="../css/full.css" rel="stylesheet">

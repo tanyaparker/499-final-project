@@ -9,6 +9,11 @@ class MovieController extends BaseController {
 		return View::make('quickflix/index');
 	}
 
+	public function favorites()
+	{
+		return View::make('quickflix/bucket');
+	}
+
 	public function search()
 	{
 		$title = Input::get('title');
